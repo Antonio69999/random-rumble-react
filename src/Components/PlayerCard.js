@@ -2,25 +2,25 @@ import React from "react";
 import ButtonCapacity from "./ButtonCapacity";
 import ProgressBar from "./ProgressBar";
 
-const PlayerCard = (props) => {
+const PlayerCard = ({ player }) => {
   return (
     <div
-      key={props.player.id}
+      key={player.id}
       className="col-sm-3 card center"
-      id={`joueur${props.player.id}`}
+      id={`joueur${player.id}`}
     >
       <div className="card-body text-center">
-        <h5 className="card-title">{props.player.name}</h5>
+        <h5 className="card-title">{player.name}</h5>
         <ProgressBar
-          pv={props.player.pv}
-          pvMax={props.player.pvMax}
+          pv={player.pv}
+          pvMax={player.pvMax}
           faType="fa-heart"
           barName=" : pv "
           bgType="bg-danger"
         />
         <ProgressBar
-          pv={props.player.mana}
-          pvMax={props.player.manaMax}
+          pv={player.mana}
+          pvMax={player.manaMax}
           faType="fa-fire-alt"
           barName=" : mana "
         />
@@ -28,10 +28,10 @@ const PlayerCard = (props) => {
         <span className="badge badge-danger ml-2 " id="degatSpanJ1"></span>
         <div className="row ">
           <div>
-            <ButtonCapacity player={props.player} />
-            <ButtonCapacity player={props.player} />
-            <ButtonCapacity player={props.player} />
-            <ButtonCapacity player={props.player} />
+            <ButtonCapacity player={player} />
+            <ButtonCapacity player={player} />
+            <ButtonCapacity player={player} />
+            <ButtonCapacity player={player} />
           </div>
         </div>
       </div>

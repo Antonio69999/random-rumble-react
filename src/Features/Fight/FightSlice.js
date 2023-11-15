@@ -16,13 +16,25 @@ export const fightSlice = createSlice({
   initialState,
   reducers: {
     hitMonster: (state, action) => {
-      switch (action.type) {
-        default:
-          return state;
+      // state.monster = {
+      //   ...state.monster,
+      //   pv: state.monster.pv - action.payload.monsterDecreasePv
+      // }
+      if (state.players.pv === 0) {
+        return state;
       }
+      state.monster.pv -= action.payload.monsterDecreasePv; // toolkit
+    },
+    hitBack: (state, action) => {
+      const playerPV = state.players[action.payload.playerHit].pv;
+      if (playerPV === 0) {
+        return state;
+      }
+      state.players[action.payload.playerHit].pv -=
+        action.payload.playerDecreasePv;
     },
   },
 });
 
-export const { hitMonster } = fightSlice.actions;
+export const { hitMonster, hitBack } = fightSlice.actions;
 export default fightSlice.reducer;
