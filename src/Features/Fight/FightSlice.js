@@ -46,8 +46,8 @@ const initialState = {
     },
   ],
   monster: {
-    pv: "1000",
-    pvMax: "1000",
+    pv: "150",
+    pvMax: "150",
   },
   playersWin: false,
   monsterWin: false,
@@ -75,8 +75,20 @@ export const fightSlice = createSlice({
         }
       }
     },
+    playerHeal: (state, action) => {
+      const player = state.players[action.payload.playerHeal.id - 1];
+      player.pv += action.payload.playerHealPv;
+      player.mana -= action.payload.playerHealPv;
+
+      if (player.mana <= 0) {
+        player.mana = 0;
+      }
+      if (player.pv >= player.pvMax) {
+        player.pv = player.pvMax;
+      }
+    },
   },
 });
 
-export const { hitMonster, hitBack } = fightSlice.actions;
+export const { hitMonster, hitBack, playerHeal } = fightSlice.actions;
 export default fightSlice.reducer;

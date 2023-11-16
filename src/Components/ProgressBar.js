@@ -1,4 +1,5 @@
 import React from "react";
+import redHeart from "../Assets/Images/redHeart.png";
 
 const ProgressBar = (props) => {
   return (
@@ -14,6 +15,7 @@ const ProgressBar = (props) => {
         <i className={` fas ${props.faType} ${props.bgType} icon-text`}>
           {" "}
           {props.pv} {props.barName}{" "}
+          
         </i>
       </div>
     </div>

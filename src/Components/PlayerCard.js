@@ -9,9 +9,11 @@ const PlayerCard = ({ player }) => {
       className="col-sm-3 card text-center"
       id={`joueur${player.id}`}
     >
-      <div className="card-body">
+      <div className="card-body d-flex justify-content-center mx-auto align-items-center">
         <h5 className="card-title">{player.name}</h5>
-        <img className="player-image mx-auto d-block" src={player.img} alt={player.name} />
+        <div className="image-div">
+          <img className="player-image" src={player.img} alt={player.name}/>
+        </div>
         <ProgressBar
           pv={player.pv}
           pvMax={player.pvMax}
@@ -29,9 +31,6 @@ const PlayerCard = ({ player }) => {
         <span className="badge badge-danger ml-2 " id="degatSpanJ1"></span>
         <div className="row">
           <div>
-            <ButtonCapacity player={player} />
-            <ButtonCapacity player={player} />
-            <ButtonCapacity player={player} />
             <ButtonCapacity player={player} />
           </div>
         </div>

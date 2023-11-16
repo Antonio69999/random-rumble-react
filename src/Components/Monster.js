@@ -22,7 +22,7 @@ const Monster = () => {
               <div id="monsterCard">
                 <div className="text-center">
                   <div className="row">
-                    <div className="col-sm-2 offset-sm-3">
+                    <div className="monster-div col-sm-2 offset-sm-3 d-flex">
                       <span
                         className="badge badge-danger ml-2 "
                         id="degatSpanMonster"
