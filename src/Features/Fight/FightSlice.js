@@ -6,11 +6,14 @@ import Magdalene from "../../Assets/Images/magdalene.png";
 import Judas from "../../Assets/Images/judas.png";
 import Lilith from "../../Assets/Images/lilith.png";
 
+import RedHeart from "../../Assets/Images/redHeart.png";
+
 const initialState = {
   players: [
     {
       name: "Isaac",
       pv: 100,
+      pvIcon: { RedHeart },
       pvMax: 100,
       mana: 30,
       manaMax: 30,
@@ -20,6 +23,7 @@ const initialState = {
     {
       name: "Magdalene",
       pv: 100,
+      pvIcon: { RedHeart },
       pvMax: 100,
       mana: 30,
       manaMax: 30,
@@ -29,6 +33,7 @@ const initialState = {
     {
       name: "Judas",
       pv: 100,
+      pvIcon: { RedHeart },
       pvMax: 100,
       mana: 30,
       manaMax: 30,
@@ -38,6 +43,7 @@ const initialState = {
     {
       name: "Lilith",
       pv: 100,
+      pvIcon: { RedHeart },
       pvMax: 100,
       mana: 30,
       manaMax: 30,

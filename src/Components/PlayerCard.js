@@ -12,7 +12,7 @@ const PlayerCard = ({ player }) => {
       <div className="card-body d-flex justify-content-center mx-auto align-items-center">
         <h5 className="card-title">{player.name}</h5>
         <div className="image-div">
-          <img className="player-image" src={player.img} alt={player.name}/>
+          <img className="player-image" src={player.img} alt={player.name} />
         </div>
         <ProgressBar
           pv={player.pv}
