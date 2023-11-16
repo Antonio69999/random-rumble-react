@@ -6,10 +6,10 @@ const PlayerCard = ({ player }) => {
   return (
     <div
       key={player.id}
-      className="col-sm-3 card text-center"
+      className="PlayerCard"
       id={`joueur${player.id}`}
     >
-      <div className="card-body d-flex justify-content-center mx-auto align-items-center">
+      <div className="card-body">
         <h5 className="card-title">{player.name}</h5>
         <div className="image-div">
           <img className="player-image" src={player.img} alt={player.name} />
