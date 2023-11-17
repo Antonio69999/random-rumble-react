@@ -70,7 +70,8 @@
 }
 
 body {
-  background-color: #232323;
+  /* background-color: #232323; */
+  background-image: url(../Assets/Images/background.png);
 }
 
 .selected {
@@ -728,15 +729,10 @@ h3 {
   align-items: center;
   justify-items: center;
 }
+ 
 
-.card-title {
-  color: white;
-  font-size: 25px;
-}
 
-.player-image {
-  height: 74px;
-} */
+
 
 /* .image-div {
   width: 100%;
@@ -752,6 +748,15 @@ h3 {
 .monster-div {
   width: 100%;
 
+}
+
+.card-title {
+  color: white;
+  font-size: 25px;
+}
+
+.player-image {
+  height: 100px;
 }
 
 .redHeart {
