@@ -31,7 +31,7 @@ const PlayerCard = ({ player }) => {
         <span className="badge badge-danger ml-2 " id="degatSpanJ1"></span>
         <div className="row">
           <div>
-            <ButtonCapacity player={player} />
+            <ButtonCapacity player={player} playerCanPlay={player.canPlay} />
           </div>
         </div>
       </div>

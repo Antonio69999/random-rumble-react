@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-//IMAGES
+// IMAGES
 import Isaac from "../../Assets/Images/isaac.png";
 import Magdalene from "../../Assets/Images/magdalene.png";
 import Judas from "../../Assets/Images/judas.png";
@@ -18,6 +18,7 @@ const initialState = {
       mana: 30,
       manaMax: 30,
       img: Isaac,
+      canPlay: true,
       id: 1,
     },
     {
@@ -28,6 +29,7 @@ const initialState = {
       mana: 30,
       manaMax: 30,
       img: Magdalene,
+      canPlay: true,
       id: 2,
     },
     {
@@ -38,6 +40,7 @@ const initialState = {
       mana: 30,
       manaMax: 30,
       img: Judas,
+      canPlay: true,
       id: 3,
     },
     {
@@ -48,6 +51,7 @@ const initialState = {
       mana: 30,
       manaMax: 30,
       img: Lilith,
+      canPlay: true,
       id: 4,
     },
   ],
@@ -57,6 +61,7 @@ const initialState = {
   },
   playersWin: false,
   monsterWin: false,
+  playerPlayed: 0,
 };
 
 export const fightSlice = createSlice({
@@ -93,8 +98,21 @@ export const fightSlice = createSlice({
         player.pv = player.pvMax;
       }
     },
+    endOfTurn: (state, action) => {
+      state.players[action.payload.player].canPlay = false;
+
+      if (state.playerPlayed + 1 === state.players.length) {
+        state.playerPlayed = 0;
+        state.players.forEach((player) => {
+          player.canPlay = true; //tous les joueurs peuvent rejouer
+        });
+      } else {
+        state.playerPlayed += 1;
+      }
+    },
   },
 });
 
-export const { hitMonster, hitBack, playerHeal } = fightSlice.actions;
+export const { hitMonster, hitBack, playerHeal, endOfTurn } =
+  fightSlice.actions;
 export default fightSlice.reducer;
